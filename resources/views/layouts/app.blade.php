@@ -30,12 +30,12 @@
                     <a href="" class="navbar-item is-tab is-hidden-mobile">Share</a>
                 </div>
                 <div class="navbar-end">
-                    @if (!Auth::guest())
+                    @if (Auth::guest())
                         <a href="" class="navbar-item is-tab">Login</a>
                         <a href="" class="navbar-item is-tab">Signup</a>
                     @else
                         <button class="dropdown is-aligned-right navbar-item is-tab">
-                            Hey Nondas <span class="icon"><i class="fa fa-caret-down"></i></span>
+                            Hey {{Auth::user()->name}} <span class="icon"><i class="fa fa-caret-down"></i></span>
                             <ul class="dropdown-menu">
                                 <li><a href="">
                                         <span class="icon"><i class="fa fa-fw m-r-5 fa-user-circle-o"></i></span>Profile</a></li>
